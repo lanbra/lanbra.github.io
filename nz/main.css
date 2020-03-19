@@ -18,13 +18,8 @@ header p {
     margin-top: -2em;
 }
 
-.white {
-    color: white;
-}
-
-.white a:link{
-    color: white;
-}
+.white,
+.white a:link,
 .white a:visited {
     color: white;
 }
