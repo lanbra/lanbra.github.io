@@ -17,3 +17,14 @@ header p {
     padding-right: 1em;
     margin-top: -2em;
 }
+
+.white {
+    color: white;
+}
+
+.white a:link{
+    color: white;
+}
+.white a:visited {
+    color: white;
+}
