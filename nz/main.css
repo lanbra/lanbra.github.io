@@ -56,3 +56,6 @@ main figure img {
     height: 360px;
     border: 1px solid black
 }
+main ul {
+    list-style-type: georgian;
+}
