@@ -41,11 +41,13 @@ header nav address{
 main p{
     text-align: justify;
     font-family: 'Liu Jian Mao Cao', cursive;
+    margin: auto;
 }
 
 main figure{
     margin-left: 0;
     width: 100%;
+    margin: auto;
 }
 
 main figure img {
@@ -76,3 +78,16 @@ footer .next{
 
 /*font awesome und cdnjs.com */
 
+@media screen and (max-width:900px){
+    main{
+        max-width: 90%;
+    }
+    header .banner {
+        width: 100vw;
+    }
+    
+}
+
+main {
+    margin: auto
+}
