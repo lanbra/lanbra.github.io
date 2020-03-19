@@ -2,7 +2,7 @@ body {
     /* kommentarform in css */
     max-width: 1280px;
     margin: auto;
-    font-family: Arial;
+    font-family: Arialfont-family: 'Open Sans', sans-serif;
 }
 
 header {
@@ -39,7 +39,8 @@ header nav address{
 }
 
 main p{
-    text-align: justify
+    text-align: justify;
+    font-family: 'Liu Jian Mao Cao', cursive;
 }
 
 main figure{
@@ -72,3 +73,6 @@ footer .back{
 footer .next{
     float: right;
 }
+
+/*font awesome und cdnjs.com */
+
