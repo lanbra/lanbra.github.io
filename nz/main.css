@@ -1,0 +1,94 @@
+body {
+    /* kommentarform in css */
+    max-width: 1280px;
+    margin: auto;
+    font-family: Arialfont-family: 'Open Sans', sans-serif;
+}
+
+header {
+    text-align: center;
+
+}
+
+header p {
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 1em;
+    margin-top: -2em;
+}
+
+.white,
+.white a:link,
+.white a:visited {
+    color: white;
+}
+
+header nav img {
+    border-radius: 50%;
+}
+
+a:link, a:visited {
+    color: black;
+    /*text-decoration: none = nimmt den unterstrich vom link*/;
+}
+
+header nav address{
+    font-size:0.9em;
+    font-style: italic;
+}
+
+main p{
+    text-align: justify;
+    font-family: 'Liu Jian Mao Cao', cursive;
+    margin: auto;
+}
+
+main figure{
+    margin-left: 0;
+    width: 100%;
+    margin: auto;
+}
+
+main figure img {
+    width: 100%;
+    border: 1px solid black;
+}
+
+#map{
+    width: 100%;
+    height: 360px;
+    border: 1px solid black
+}
+main ul {
+    list-style-type: georgian;
+}
+
+footer {
+    width: 100%;
+    padding: 1em 0 3em 0;
+}
+footer .back{
+    float: left;
+}
+
+footer .next{
+    float: right;
+}
+
+/*font awesome und cdnjs.com */
+
+@media screen and (max-width:900px){
+    main{
+        max-width: 90%;
+    }
+    header .banner {
+        width: 100vw;
+    }
+    
+}
+
+main {
+    margin: auto
+}
+/*zentriert den ganzen inhalt von main*/
