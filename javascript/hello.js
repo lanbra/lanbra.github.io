@@ -17,4 +17,37 @@ let fullname = 'Jeffrey "The Dude" Lebowski';
 console.log(fullname);
 
 let template = `Dein Highscore ist ${highscore} Punkte`;
-console.log (template)
+console.log (template);
+
+let isover18 = true;
+console.log(isover18);
+
+let age = 17;
+console.log("über 18?", age > 18);
+
+let participants = [ "John", "jane", "max"];
+console.log(participants);
+console.log("Einträge im Array: ", participants.length);
+console.log(participants[2]);
+
+let gameHighscores = [2099, 3948, 4889];
+console.log(gameHighscores)
+
+let user = {
+    firstname: "John",
+    lastname: "Smith",
+    age: 25
+
+};
+
+console.log(user);
+console.log(user.firstname);
+user.highscore = 200; // hier wird der Wert hinzugefügt
+console.log(user);
+user["highscore ever"] = 400 // Schlüssel mit Leerzeichen kann console nicht schreiben, deshalb spez Schreibweise folgendermaßen
+console.log(user)
+
+let a = 2;
+let b = 4;
+console.log(a+b);
+console.log(b/(a-1));
