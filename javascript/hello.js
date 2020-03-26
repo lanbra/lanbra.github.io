@@ -101,11 +101,14 @@ birthYears.forEach(year => {
 });
 
 let users = [
-    { firstname: "John", lastname: "Smith", birthyear: 1993}
-    { firstname: "Jane", lastname: "Smith", birthyear: 1983}
+    { firstname: "John", lastname: "Smith", birthyear: 1993},
+    {firstname: "Jane", lastname: "Smith", birthyear: 1983}
 ];
 console.log(users);
 
 users.forEach(user => {
-    console.log(`${user.firstname} ist oder wird heuer ${calcAge(user.birthYear) Jahre alt}`)
+    console.log(`${user.firstname} ist oder wird heuer ${calcAge(user.birthYear)} Jahre alt`)
 });
+
+let firstParagraph = document.querySelector("#pFirst")
+console.log(firstParagraph);
