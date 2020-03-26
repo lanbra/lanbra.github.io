@@ -61,3 +61,19 @@ console.log(b/(a-1));
 // } else {
 //     console.log("Leider unter 18")
 // }
+
+// Schleifen: for Schleife
+
+for (let i=0; i<10; i++) {
+    console.log(`Schleife ${i}`);
+}
+
+for(let j = 0; j< participants.length; j++) {
+    const participant = participants [j];
+    console.log(`Teilnehmer*in ${j} ${participant}`);
+    
+}
+
+participants.forEach(participant => {
+    console.log(`Teilnehmer*in ${participant}`);
+});
