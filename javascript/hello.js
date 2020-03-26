@@ -102,13 +102,29 @@ birthYears.forEach(year => {
 
 let users = [
     { firstname: "John", lastname: "Smith", birthyear: 1993},
-    {firstname: "Jane", lastname: "Smith", birthyear: 1983}
+    { firstname: "Jane", lastname: "Smith", birthyear: 1983}
 ];
 console.log(users);
 
 users.forEach(user => {
-    console.log(`${user.firstname} ist oder wird heuer ${calcAge(user.birthYear)} Jahre alt`)
+    console.log(`${user.firstname} ist oder wird heuer ${calcAge(user.birthyear)} Jahre alt`);
 });
 
 let firstParagraph = document.querySelector("#pFirst")
 console.log(firstParagraph);
+// first paragraph remove
+firstParagraph.innerHTML="Test";
+firstParagraph.style.color = "red"
+
+let indentParas = document.querySelector(".indent");
+console.log(indentParas);
+indentParas.innerHTML = "Test2";
+indentParas.forEach((para, index => {
+    console.log(`Data attribut ${para.dataset.lat}`)
+    para.innerHTML = `Absatz ${index}`;
+    if (index % 2 == 0) {
+        para.style.color = "red";
+    } else {
+        para.style.color = "blue"
+    }
+}))
