@@ -7,7 +7,7 @@ let map = L.map("map", {
     ]
 });
 
-let circleGroup = l.featureGroup().addTo(map);
+let circleGroup = L.featureGroup().addTo(map);
 
 
 L.control.layers({
@@ -33,12 +33,6 @@ L.control.layers({
 //     mrk.bindPopup(`$(row[0]} $(row[1]}`);
 
 // }
-
-let drawCircles=function(data) {
-   
-
-
-
 // console.log(CONFIRMED);
 
 // // for-Schleife über alle Arrays der CONFIRMED Einträge:
@@ -54,12 +48,14 @@ let drawCircles = function (data) {
         //  mrk.bindPopup(`${reg}: ${val}`);
         let s = 0.5;
         let r = Math.sqrt(val*s/Math.PI);
-        let circle = L.circleMarker([lat, lng],
+        let circle = L.circleMarker([lat, lng],{
             radius: r
         }).addTo(map);
 
         circle.bindPopup(`${reg}: ${val}`);
-        
+
     }
 };
 
+drawCircles(CONFIRMED);
+drawCircles(RECOVERED);
