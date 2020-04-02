@@ -17,5 +17,26 @@ L.control.layers({
     
 }).addTo(map);
 
-L.marker([0,0].addTo(map));
+// L.marker([0,0]).addTo(map);
 
+// // console.log(CONFIRMED);
+// for (let i=1; i < CONFIRMED.length; i++) {
+//     let row = CONFIRMED [i];
+//     // console.log(row[2],row[3]);
+//     let val = row[row.length-1];
+//     let mrk = L.marker([row[2], row[3]]).addTo(map);
+//     mrk.bindPopup(`$(row[0]} $(row[1]}`);
+
+// }
+
+console.log(CONFIRMED);
+
+// // for-Schleife über alle Arrays der CONFIRMED Einträge:
+
+for (let i = 1; i < CONFIRMED.length; i++) {
+     let row = CONFIRMED[i];
+     // console.log(row[2],row[3]);
+     let val = row[row.length-1];
+     let mrk = L.marker([row[2],row[3]]).addTo(map);
+     mrk.bindPopup(`${row[0]} ${row[1]}`);
+}
