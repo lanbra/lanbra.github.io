@@ -41,8 +41,11 @@ let drawCircles = function () {
     let header = CONFIRMED[0];
     let index = header.length -1;
     let topic ="bestätigte Fälle";
-    let options = doument.querySelector("#pulldown").options;
-    console.log(options)
+    let options = document.querySelector("#pulldown").options;
+    console.log(options);
+    let value = options[options.selectedIndex].value;
+    let label = options[options.selectedIndex].text;
+    console.log(value, label,options)
 //Datum anzeigen
     document.querySelector("#datum").innerHTML=`${header[index]}-${topic}`;
 
