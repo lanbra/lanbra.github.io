@@ -47,7 +47,21 @@ let drawCircles = function () {
     let label = options[options.selectedIndex].text;
     console.log(value, label,options)
 //Datum anzeigen
-    document.querySelector("#datum").innerHTML=`${header[index]}-${topic}`;
+
+if (value === "confirmed") {
+    data=CONFIRMED;
+    color="blue";
+} else if (value === "deaths") {
+        data=DEATHS;
+        color="purple"
+} else {
+      data=RECOVERED;
+      data="green"
+} 
+
+document.querySelector("#datum").innerHTML=`am ${header[index]} - ${label}`;
+
+circleGroup.clearLayers()
 
     for (let i = 1; i < data.length; i++) {
         let row = data[i];
@@ -74,5 +88,6 @@ document.querySelector("#pulldown").onchange = function() {
     console.log("geändert")
     drawCircles();
 };
+
 drawCircles();
 
