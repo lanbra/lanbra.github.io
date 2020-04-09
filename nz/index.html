@@ -5,10 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neuseelandreise - Akaroa</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <script defer src="main.js"></script>
 </head>
 
 <body>
@@ -30,7 +37,7 @@
             </a>
             <!---100x100 Pixel 72 dpi-->
             <address>
-                <a href="mailto:laura.brandstetter@web.de"> <i class="far fa-envelope"> </i> Laura Brandstetter</a>-
+                <a href="mailto:laura.brandstetter@web.de"> <i class="far fa-envelope"> </i> Laura Brandstetter</a> -
                 <a href="https://github.com/lanbra"> <i class="fab fa-github"></i> lanbra.github.io </a>
             </address>
         </nav>
@@ -51,14 +58,17 @@
                 <!--900x600-->
                 <figcaption>Onuku Kapelle auf Akaroa <a
                         href="Image by
-                        https://pixabay.com/users/Jeffraines-6894357/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2916570"> <i class="fas fa-camera-retro"></i> &copy;Jeffraines
+                        https://pixabay.com/users/Jeffraines-6894357/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2916570">
+                        <i class="fas fa-camera-retro"></i> &copy;Jeffraines
                     </a> from <a
                         href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2916570">Pixabay</a>
                 </figcaption>
             </figure>
 
             <h3>Übersichtskarte</h3>
-            <div id="map" data-lat="43.803056" data-lng="172.967778" data-tit="Akaora"></map></div>
+            <div id="map"  data-lat="-43.803056" data-lng="-172.967778"
+                data-tit="Akaora"></div>
+
 
             <h3>Links</h3>
             <!--ungeordnete Liste 4 Themen Links-->
@@ -81,8 +91,9 @@
     <footer>
         <hr>
         <nav>
-           <a class="back" href="https:/username.github.io/nz"><i class="fas fa-backward"></i>vorhergehende Etappe</a> |
-            <a class="next" href="https:/honsachkatzle.github.io/nz"></i>Lale Tekapo <i class="fas fa-forward"></i></a> 
+            <!-- <a class="back" href="https:/username.github.io/nz"><i class="fas fa-backward"></i>vorhergehende Etappe</a> -->
+            |
+            <a class="next" href="https:/honsachkatzle.github.io/nz"></i>Lale Tekapo <i class="fas fa-forward"></i></a>
         </nav>
     </footer>
 </body>

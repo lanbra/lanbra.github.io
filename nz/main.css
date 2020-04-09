@@ -92,3 +92,12 @@ main {
     margin: auto
 }
 /*zentriert den ganzen inhalt von main*/
+
+#map { 
+    height: 180px; 
+    
+}
+
+title {
+    font-family: fantasy;
+}
