@@ -11,7 +11,7 @@ let circleGroup = L.featureGroup().addTo(map);
 
 
 L.control.layers({
-    "OpenTopoMap": l.tileLayer.provider,
+    "OpenTopoMap":startLayer,
     "OpenStreetMap.Mapnik": L.tileLayer.provider("OpenStreetMap.Mapnik"),
     "Esri.WorldImagery": L.tileLayer.provider("Esri.WorldImagery"),
     "Esri.OceanBasemap": L.tileLayer.provider("Esri.OceanBasemap"),
@@ -41,7 +41,8 @@ let drawCircles = function () {
     let header = CONFIRMED[0];
     let index = header.length -1;
     let topic ="bestätigte Fälle";
-
+    let options = doument.querySelector("#pulldown").options;
+    console.log(options)
 //Datum anzeigen
     document.querySelector("#datum").innerHTML=`${header[index]}-${topic}`;
 
@@ -66,12 +67,9 @@ let drawCircles = function () {
     }
 };
 
-
-    }
+document.querySelector("#pulldown").onchange = function() {
+    console.log("geändert")
+    drawCircles();
 };
+drawCircles();
 
-
-    }
-};
-
-drawCircles(CONFIRMED);
