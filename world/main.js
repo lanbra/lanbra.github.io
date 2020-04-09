@@ -102,7 +102,7 @@ drawCircles()
 
 let playButton = document.querySelector("#play");
 
-playButton.onlick = function() {
+playButton.onclick = function() {
     console.log("clicked");
 
     let value=slider.min;
@@ -117,7 +117,6 @@ playButton.onlick = function() {
 
     if(value > slider.max) {
         window.clearInterval(runningAnimation);
-        }
+     }
     },250)
-    
 }
