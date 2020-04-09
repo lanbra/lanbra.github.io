@@ -49,15 +49,17 @@ let drawCircles = function () {
 //Datum anzeigen
 
 if (value === "confirmed") {
-    data=CONFIRMED;
-    color="#0074D9";
+    data = CONFIRMED;
+    color = "#0074D9";
 } else if (value === "deaths") {
-        data=DEATHS;
-        color="#B10DC9"
+    data = DEATHS;
+    color = "#B10DC9";
 } else {
-      data=RECOVERED;
-      color="#2ECC40"
-} 
+    data = RECOVERED;
+    color = "#2ECC40";
+}
+
+console.log(CONFIRMED == RECOVERED);
 
 document.querySelector("#datum").innerHTML=`am ${header[index]} - ${label}`;
 
@@ -70,6 +72,10 @@ circleGroup.clearLayers()
         let lat = row [2];
         let lng = row [3];
         let val = row[index];
+
+        if (val === "0") {
+            continue;
+        }
 
 
         //A = r²*PI
