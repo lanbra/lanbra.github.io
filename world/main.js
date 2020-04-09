@@ -50,13 +50,13 @@ let drawCircles = function () {
 
 if (value === "confirmed") {
     data=CONFIRMED;
-    color="blue";
+    color="#0074D9";
 } else if (value === "deaths") {
         data=DEATHS;
-        color="purple"
+        color="#B10DC9"
 } else {
       data=RECOVERED;
-      data="green"
+      data="#2ECC40"
 } 
 
 document.querySelector("#datum").innerHTML=`am ${header[index]} - ${label}`;
@@ -78,7 +78,8 @@ circleGroup.clearLayers()
         let s = 0.5;
         let r = Math.sqrt(val * s / Math.PI);
         let circle = L.circleMarker([lat, lng], {
-            radius: r
+            radius: r,
+            color: color
         }).addTo(circleGroup);
         circle.bindPopup(`${reg}: ${val}`);
     }
