@@ -56,6 +56,10 @@ let drawCircles = function () {
 
     circleGroup.clearLayers();
 
+    data.sort(function compareNumbers(row1,row2) {
+        return row2[index] -row1[index];
+    });
+
     //console.log(data);
     for (let i = 1; i < data.length; i++) {
         let row = data[i];
@@ -95,3 +99,19 @@ slider.onchange = function () {
 };
 
 drawCircles()
+
+let playButton = document.querySelector("#play");
+
+playButton.onlick = function() {
+    console.log("clicked");
+
+    let value=slider.min;
+
+    window.setInterval(function () {
+        console.log(value, "nach 250 ms")
+        slider.value = value;
+        drawCircles();
+        value++
+    },250)
+    
+}
