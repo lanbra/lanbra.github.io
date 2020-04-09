@@ -56,7 +56,7 @@ if (value === "confirmed") {
         color="#B10DC9"
 } else {
       data=RECOVERED;
-      data="#2ECC40"
+      color="#2ECC40"
 } 
 
 document.querySelector("#datum").innerHTML=`am ${header[index]} - ${label}`;
@@ -86,9 +86,17 @@ circleGroup.clearLayers()
 };
 
 document.querySelector("#pulldown").onchange = function() {
-    console.log("geändert")
     drawCircles();
 };
 
-drawCircles();
+let slider = document.querySelector("#slider");
+slider.min = 4;
+slider.max = CONFIRMED[0].length -1;
+slider.step=1;
+slider.value=slider.max;
+
+slider.onchange = function () {
+    drawCircles();
+}
+
 
