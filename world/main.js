@@ -107,11 +107,17 @@ playButton.onlick = function() {
 
     let value=slider.min;
 
-    window.setInterval(function () {
-        console.log(value, "nach 250 ms")
+    let runningAnimation = null;
+    runningAnimation = window.setInterval(function () {
+        console.log(value, "nach 250 ms");
         slider.value = value;
         drawCircles();
         value++
+    
+
+    if(value > slider.max) {
+        window.clearInterval(runningAnimation);
+        }
     },250)
     
 }
