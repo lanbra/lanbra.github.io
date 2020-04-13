@@ -21,8 +21,10 @@ let marker = L.marker([-43.803056, 172.967778]).addTo(mymap);
 
 let popup = L.popup()
     .setLatLng([-43.801056, 172.967778])
-    .setContent("Akaroa Harbour")
-    .openOn(mymap);
+    // .setContent("Akaroa Harbour")
+    // .openOn(mymap);
+
+marker.bindPopup("Akaroa").openPopup();
 
 // let circle = L.circle([-43.803056, 172.967778], {
 //     color: 'red',
