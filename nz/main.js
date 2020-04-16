@@ -19,10 +19,19 @@ L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 
 // let marker = L.marker([-43.803056, 172.967778]).addTo(mymap);
 
+<<<<<<< HEAD
 // let popup = L.popup()
 //     .setLatLng([-43.801056, 172.967778])
 //     .setContent("Akaroa Harbour")
 //     .openOn(mymap);
+=======
+let popup = L.popup()
+    .setLatLng([-43.801056, 172.967778])
+    // .setContent("Akaroa Harbour")
+    // .openOn(mymap);
+
+marker.bindPopup("Akaroa").openPopup();
+>>>>>>> 496aba4281c128c85fe778b3c5a19b41241762c5
 
 // let circle = L.circle([-43.803056, 172.967778], {
 //     color: 'red',
