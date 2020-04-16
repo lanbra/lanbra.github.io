@@ -25,6 +25,10 @@ L.control.layers({
 let walk = L.geoJson(SPAZIERGANG, {
     pointToLayer:function(point, latlng) {
         let marker = L.marker(latlng);
+        let icon = L.icon({ 
+            iconUrl: 'icons/sight.svg',
+            iconSIze: [32, 32]
+        });
         console.log("Point", point);
         marker.bindPopup(`<h3> ${point.properties.NAME}</h3>
         <p><a target = "links" href ="${point.properties.WEITERE_INF}>
