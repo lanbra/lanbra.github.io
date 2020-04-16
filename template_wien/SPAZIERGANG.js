@@ -1,4 +1,4 @@
-const Spaziergang = {
+const SPAZIERGANG = {
     "type": "FeatureCollection",
     "totalFeatures": 126,
     "features": [{
