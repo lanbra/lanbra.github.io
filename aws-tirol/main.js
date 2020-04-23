@@ -88,10 +88,11 @@ let drawWind = function (jsonData) {
             return feature.properties.WG;
         },
         pointToLayer: function (feature, latlng) {
+            let kmh = Math.round(feature.properties.WG / 1000*3600);
             return L.marker(latlng, {
                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
                 icon: L.divIcon({
-                    html: `<div class="label-wind">${feature.properties.LT.toFixed(1)}</div>`,
+                    html: `<div class="label-wind">${feature.properties.WG.toFixed(1)}</div>`,
                     className: "ignore-me" // dirty hack
                 })
 
