@@ -47,9 +47,14 @@ let aws = L.geoJson.ajax(awsUrl, {
         console.log("point: ", point);
         let marker = L.marker(latlng).bindPopup(`
         <h3>${point.properties.name}</h3>
+        <h3>${point.geometry.coordinates[2]} m</h3>
         <ul>
+        <li>Position:  ${point.geometry.coordinates[0]} ${point.geometry.coordinates[1]}</li>s
         <li>Datum: ${point.properties.date}</li>
         <li>Lufttemperatur: ${point.properties.LT} °C</li>
+        <li>Windgeschwindigkeit:  ${point.properties.WG} m/s</li>
+        <li> Relative Luftfeuchte:${point.properties.RH} %</li>
+        <li> Schneehöhe: ${point.properties.HS} cm</li> 
         </ul>
         `);
         return marker;
