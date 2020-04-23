@@ -8,7 +8,8 @@ let map = L.map("map", {
 
 let overlay = {
     stations: L.featureGroup(),
-    temperature: L.featureGroup()
+    temperature: L.featureGroup(),
+    wind: L.featureGroup()
 }
 
 L.control.layers({
