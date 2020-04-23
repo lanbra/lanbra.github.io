@@ -38,8 +38,10 @@ let sights = L.geoJson.ajax(sightUrl, {
         let marker = L.marker(latlng, {
             icon: icon
         });
-        // console.log("Point", point);
+        console.log("Point", point);
         marker.bindPopup(`<h3>${point.properties.NAME}</h3>
+        <p> ${point.properties.ADRESSE} </p>
+        <p> ${point.properties.BEMERKUNG} </p>
         <p><a target="links" href="${point.properties.WEITERE_INF}">Link</a></p>
         `);
         return marker;
