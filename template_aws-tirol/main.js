@@ -8,7 +8,7 @@ let map = L.map("map", {
     ]
 });
 
-let awsLayer=L.featureGroup().addTo(map);
+let awsLayer = L.featureGroup().addTo(map);
 
 
 L.control.layers({
@@ -30,7 +30,7 @@ L.control.layers({
 let awsUrl = "https://aws.openweb.cc/stations";
 
 let aws = L.geoJson.ajax(awsUrl, {
-    filter: function(feature) {
+    filter: function (feature) {
         console.log("Feature in filter:", feature)
         // if (feature.properties.LT < 5) {
         //     return true;
@@ -41,9 +41,9 @@ let aws = L.geoJson.ajax(awsUrl, {
         // return (feature.geometry.coordinates[2] > 3000)
         return feature.properties.LT != null;
 
-        
+
     },
-    pointToLayer: function(point, latlng) {
+    pointToLayer: function (point, latlng) {
         console.log("point: ", point);
         let marker = L.marker(latlng).bindPopup(`
         <h3>${point.properties.name}</h3>
@@ -60,5 +60,3 @@ let aws = L.geoJson.ajax(awsUrl, {
         return marker;
     }
 }).addTo(awsLayer);
-
-
