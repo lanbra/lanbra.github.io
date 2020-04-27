@@ -1,6 +1,8 @@
 let startLayer = L.tileLayer.provider("BasemapAT.grau");
 
 let map = L.map("map", {
+    center: [47.3, 11.5],
+    zoom: 8,
     layers: [
         startLayer
     ]
@@ -101,35 +103,35 @@ let drawTemperature = function (jsonData) {
         }
     }).addTo(overlay.temperature);
 };
-let drawWind = function (jsonData) {
-    console.log("aus der Funktion", jsonData);
+
+let drawWind = function(jsonData) {
+    //console.log("aus der Funktion", jsonData);
     L.geoJson(jsonData, {
-        filter: function (feature) {
+        filter: function(feature) {
             return feature.properties.WG;
         },
-        pointToLayer: function (feature, latlng) {
-            let kmh = Math.round(feature.properties.WG / 1000*3600);
+        pointToLayer: function(feature, latlng) {
+            let kmh = Math.round(feature.properties.WG / 1000 * 3600);
+            let color = getColor(kmh,COLORS.wind);
+            let rotation = feature.properties.WR;
             return L.marker(latlng, {
-                title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
+                title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m) - ${kmh} km/h`,
                 icon: L.divIcon({
-                    html: `<div class="label-wind">${feature.properties.WG.toFixed(1)}</div>`,
+                    html: `<div class="label-wind"><i class="fas fa-arrow-circle-up" style="color:${color};transform: rotate(${rotation}deg)"></i></div>`,
                     className: "ignore-me" // dirty hack
                 })
-
-
             })
         }
-}).addTo(overlay.wind);
-
+    }).addTo(overlay.wind);
 };
 
 aws.on("data:loaded", function() {
     //console.log(aws.toGeoJSON());
     drawTemperature(aws.toGeoJSON());
+    drawWind(aws.toGeoJSON());
     map.fitBounds(overlay.stations.getBounds());
 
-    overlay.temperature.addTo(map);
-
-    drawWind(aws.toGeoJSON());
     overlay.wind.addTo(map);
+
+    //console.log(COLORS);
 });
