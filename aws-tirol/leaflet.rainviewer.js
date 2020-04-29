@@ -1,4 +1,3 @@
-  
 L.Control.Rainviewer = L.Control.extend({
     options: {
         position: 'bottomleft',

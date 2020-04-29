@@ -1,5 +1,4 @@
 let startLayer = L.tileLayer.provider("BasemapAT.grau");
-
 let map = L.map("map", {
     center: [47.3, 11.5],
     zoom: 8,
@@ -151,11 +150,25 @@ aws.on("data:loaded", function() {
     //console.log(aws.toGeoJSON());
     drawTemperature(aws.toGeoJSON());
     drawWind(aws.toGeoJSON());
+    overlay.wind.addTo(map);
     drawSnow(aws.toGeoJSON());
+    overlay.snow.addTo(map);
     map.fitBounds(overlay.stations.getBounds());
 
-    overlay.wind.addTo(map);
-    overlay.snow.addTo(map);
+    
+    
 
     //console.log(COLORS);
 });
+
+// Change default options
+L.control.rainviwer({ 
+    position: 'bottomleft',
+    nextButtonText: '>',
+    playStopButtonText: 'Play/Stop',
+    prevButtonText: '<',
+    positionSliderLabelText: "Hour:",
+    opacitySliderLabelText: "Opacity:",
+    animationInterval: 500,
+    opacity: 0.5
+}).addTo(map);
