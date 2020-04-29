@@ -162,7 +162,7 @@ aws.on("data:loaded", function() {
 });
 
 // Change default options
-L.control.rainviwer({ 
+let rainviewer = L.control.rainviewer({ 
     position: 'bottomleft',
     nextButtonText: '>',
     playStopButtonText: 'Play/Stop',
@@ -171,4 +171,5 @@ L.control.rainviwer({
     opacitySliderLabelText: "Opacity:",
     animationInterval: 500,
     opacity: 0.5
-}).addTo(map);
+});
+rainviewer.addTo(map);
