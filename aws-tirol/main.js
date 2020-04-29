@@ -144,7 +144,7 @@ let drawSnow = function (jsonData) {
                 })
             })
         }
-    }).addTo(overlay.temperature);
+    }).addTo(overlay.snow);
 };
 
 aws.on("data:loaded", function() {
