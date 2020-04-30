@@ -30,8 +30,8 @@ L.control.layers({
     "Etappen": overlay.etappen
 }).addTo(map);
 
-console.log(ETAPPEN);
-console.log(ADLERBLICKE);
+// console.log(ETAPPEN);
+// console.log(ADLERBLICKE);
 
 for (const blick of ADLERBLICKE) {
     console.log(blick);
