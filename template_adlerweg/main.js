@@ -32,14 +32,24 @@ console.log(ETAPPEN);
 console.log(ADLERBLICKE);
 
 for (const blick of ADLERBLICKE) {
-   let mrk = L.marker([blick.lat, blick.lng], {
-       icon:L.icon({
-           iconSize:[32,37],
-           iconAnchor: [16,37],
-           iconURL:"icons/panoramicview.png"
-       })
-   }).addTo(overlay.adlerblicke);
-   L.marker([blick.lat, blick.lng]).addTo(map)
-   mrk.bindPopup(`Standort ${blick.standort}(${blick.seehoehe}m)`);
+    console.log(blick);
+    let mrk = L.marker([blick.lat,blick.lng], {
+        icon: L.icon({
+            iconSize: [32, 37],
+            iconAnchor: [16, 37],
+            popupAnchor: [0, -37],
+            iconUrl: "icons/panoramicview.png"
+        })
+    }).addTo(overlay.adlerblicke);
+    L.marker([blick.lat,blick.lng]).addTo(map);
+    mrk.bindPopup(`Standort ${blick.standort} (${blick.seehoehe}m)`);
 }
 overlay.adlerblicke.addTo(map);
+
+let gpx=new L.GPX("gpx/AdlerwegEtappte01.gpx",{
+    async: true
+});
+
+gpx.on("loaded",function(evt){
+    map.fitBounds(evt.target.getBounds());
+}).addTo(map)
