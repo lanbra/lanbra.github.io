@@ -9,7 +9,8 @@ let map = L.map("map", {
 });
 
 let overlay = {
-    adlerblicke: L.featureGroup()
+    adlerblicke: L.featureGroup(),
+    etappen: L.featureGroup()
 };
 
 L.control.layers({
@@ -25,7 +26,8 @@ L.control.layers({
         L.tileLayer.provider("BasemapAT.overlay")
     ])
 }, {
-    "Adlerblicke": overlay.adlerblicke
+    "Adlerblicke": overlay.adlerblicke,
+    "Etappen": overlay.etappen
 }).addTo(map);
 
 console.log(ETAPPEN);
@@ -47,9 +49,21 @@ for (const blick of ADLERBLICKE) {
 overlay.adlerblicke.addTo(map);
 
 let gpx=new L.GPX("gpx/AdlerwegEtappe01.gpx",{
-    async: true
+    async: true,
+    marker_options: {
+        startIconUrl: "icons/number_1.png",
+        endIconUrl: "icons/finish.png",
+        shadowUrl: null,
+        iconSize: [32, 37],
+        iconAnchor: [16, 37],
+      },
+      polyline_options: {
+          color: "black",
+          dashArray: [2, 5]
+      }
 });
 
 gpx.on("loaded",function(evt){
     map.fitBounds(evt.target.getBounds());
-}).addTo(map)
+}).addTo(overlay.etappen);
+overlay.etappen.addTo(map);
