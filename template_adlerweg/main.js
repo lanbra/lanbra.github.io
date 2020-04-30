@@ -74,6 +74,18 @@ let drawEtappe = function(nr){
         map.fitBounds(evt.target.getBounds());
     }).addTo(overlay.etappen);
     overlay.etappen.addTo(map);
+    
+    for (const key in ETAPPEN[nr]) {
+        const cal = ETAPPEN[nr][key];
+        console.log (`et-${key}`);
+        let elem = document.querySelector(`#et-${key}`);
+        if (elem){
+            elem.innerHTML = val;
+            console.log(val);
+        }
+
+    }
+    
 };
 drawEtappe(11);
 
@@ -83,7 +95,7 @@ let pulldown = document.querySelector("#pulldown");
 for (let i=1; i < ETAPPEN.length; i++) {
     const etappe = ETAPPEN [i];
     console.log(etappe);
-    pulldown.innerHTML +=`<option value="${i}>${etappe.titel}</option>`;
+    pulldown.innerHTML += `<option value="${i}">${etappe.titel}</option>`;
 }
 
 pulldown.onchange = function(evt) {
