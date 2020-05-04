@@ -77,7 +77,9 @@ let drawEtappe = function(nr) {
     overlay.etappen.addTo(map);
 
     for (const key in ETAPPEN[nr]) {
+        console.log("schau mal",key)
         const val = ETAPPEN[nr][key];
+        console.log("schau mal 2:",key,val)
         console.log(`et-${key}`);
         let elem = document.querySelector(`#et-${key}`);
         if (elem) {
