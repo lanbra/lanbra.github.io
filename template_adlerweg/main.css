@@ -41,3 +41,15 @@ main h2 {
     height: 70vh;
     border: 1px solid gray;
 }
+
+/* 
+main h3 span {
+    color: black;
+    background-color: lightgray
+
+} */
+
+.wichtig {
+    color: red;
+    font-weight: bold
+}
