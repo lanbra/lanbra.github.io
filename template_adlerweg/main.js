@@ -53,7 +53,6 @@ let drawEtappe = function(nr) {
 
     //console.log(ETAPPEN[nr].track);
     let track = ETAPPEN[nr].track.replace("A", "");
-    //console.log(track);
 
     let gpx = new L.GPX(`gpx/AdlerwegEtappe${track}.gpx`, {
         async: true,
@@ -77,9 +76,12 @@ let drawEtappe = function(nr) {
     overlay.etappen.addTo(map);
 
     for (const key in ETAPPEN[nr]) {
-        console.log("schau mal",key)
-        const val = ETAPPEN[nr][key];
+        console.log("schau mal",key);
+        let val = ETAPPEN[nr][key];
         console.log("schau mal 2:",key,val)
+        if (key == "einkehr") {
+            val= ETAPPEN[nr][key].replace(/#/g, ", ");
+        }
         console.log(`et-${key}`);
         let elem = document.querySelector(`#et-${key}`);
         if (elem) {
