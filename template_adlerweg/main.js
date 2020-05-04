@@ -48,58 +48,56 @@ for (const blick of ADLERBLICKE) {
 }
 overlay.adlerblicke.addTo(map);
 
-let drawEtappe = function(nr){
+let drawEtappe = function(nr) {
     overlay.etappen.clearLayers();
-    console.log(ETAPPEN[nr].track);
-    let track= ETAPPEN[nr].track.replace("A", "");
-    console.log(track)
-    
 
-    let gpx=new L.GPX(`gpx/AdlerwegEtappe${track}.gpx`,{
+    //console.log(ETAPPEN[nr].track);
+    let track = ETAPPEN[nr].track.replace("A", "");
+    //console.log(track);
+
+    let gpx = new L.GPX(`gpx/AdlerwegEtappe${track}.gpx`, {
         async: true,
         marker_options: {
-            startIconUrl: `icons/number_${nr}`,
+            startIconUrl: `icons/number_${nr}.png`,
             endIconUrl: "icons/finish.png",
             shadowUrl: null,
             iconSize: [32, 37],
             iconAnchor: [16, 37],
-          },
-          polyline_options: {
-              color: "black",
-              dashArray: [2, 5]
-          }
+            popupAnchor: [0, -37]
+        },
+        polyline_options: {
+            color: "black",
+            dashArray: [2, 5]
+        }
     });
     
-    gpx.on("loaded",function(evt){
+    gpx.on("loaded", function(evt) {
         map.fitBounds(evt.target.getBounds());
     }).addTo(overlay.etappen);
     overlay.etappen.addTo(map);
-    
+
     for (const key in ETAPPEN[nr]) {
-        const cal = ETAPPEN[nr][key];
-        console.log (`et-${key}`);
+        const val = ETAPPEN[nr][key];
+        console.log(`et-${key}`);
         let elem = document.querySelector(`#et-${key}`);
-        if (elem){
+        if (elem) {
             elem.innerHTML = val;
             console.log(val);
         }
-
     }
-    
 };
-drawEtappe(11);
+drawEtappe(10);
 
 let pulldown = document.querySelector("#pulldown");
-// console.log(pulldown);
+//console.log(pulldown);
 
-for (let i=1; i < ETAPPEN.length; i++) {
-    const etappe = ETAPPEN [i];
-    console.log(etappe);
+for (let i = 1; i < ETAPPEN.length; i++) {
+    const etappe = ETAPPEN[i];
+    //console.log(etappe);
     pulldown.innerHTML += `<option value="${i}">${etappe.titel}</option>`;
 }
-
 pulldown.onchange = function(evt) {
-    let nr = evt.target.options[evt.target.options.selectedIndex].values;
-    console.log(nr);
+    let nr = evt.target.options[evt.target.options.selectedIndex].value;
+    //console.log(nr);
     drawEtappe(nr);
 }
