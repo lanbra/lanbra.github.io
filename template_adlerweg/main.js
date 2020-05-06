@@ -84,9 +84,11 @@ let drawEtappe = function(nr) {
         }
         console.log(`et-${key}`);
         let elem = document.querySelector(`#et-${key}`);
-        if (elem) {
+        console.log("elem:",elem)
+        if (key == "track") {
+console.log(track)
             elem.innerHTML = val;
-            console.log(val);
+            console.log("wert",val);
         }
     }
 };
